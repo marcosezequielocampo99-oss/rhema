@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rhema | Asistencia Residencial 24hs</title>
+    <style>
+        :root {
+            --azul: #0a3d62;
+            --amarillo: #f6b93b;
+            --oscuro: #1e272e;
+            --gris: #f8f9fa;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: white; color: var(--oscuro); line-height: 1.6; }
+        
+        /* Encabezado */
+        header { background: var(--azul); color: white; padding: 40px 20px; text-align: center; }
+        header h1 { font-size: 2.8rem; letter-spacing: 2px; color: var(--amarillo); }
+        header p { font-size: 1.2rem; margin-top: 10px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        
+        /* Contenedor Principal */
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        
+        /* Grilla de Planes */
+        .planes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 20px; }
+        .card { background: var(--gris); border-radius: 12px; padding: 30px; border: 1px solid #e1e8ed; text-align: center; display: flex; flex-direction: column; justify-content: space-between; transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .card.destacado { border: 3px solid var(--amarillo); position: relative; }
+        .card.destacado .badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--amarillo); color: var(--oscuro); padding: 5px 15px; font-weight: bold; border-radius: 20px; font-size: 0.85rem; }
+        
+        .card h3 { font-size: 1.6rem; color: var(--azul); margin-bottom: 10px; }
+        .card .precio { font-size: 2.2rem; font-weight: bold; margin: 20px 0; color: var(--oscuro); }
+        .card ul { list-style: none; text-align: left; margin-bottom: 30px; }
+        .card ul li { margin-bottom: 12px; padding-left: 25px; position: relative; }
+        .card ul li::before { content: "✓"; color: #2ecc71; font-weight: bold; position: absolute; left: 0; }
+        
+        /* Botones */
+        .btn { display: block; background: var(--azul); color: white; text-decoration: none; padding: 12px; border-radius: 6px; font-weight: bold; text-transform: uppercase; transition: 0.3s; }
+        .btn:hover { background: #072d4a; }
+        .card.destacado .btn { background: var(--amarillo); color: var(--oscuro); }
+        .card.destacado .btn:hover { background: #e1a72e; }
+        
+        /* Sección Sobre Nosotros */
+        .nosotros { text-align: center; margin: 60px 0; background: var(--gris); padding: 40px; border-radius: 12px; }
+        .nosotros h2 { color: var(--azul); margin-bottom: 15px; }
+        .nosotros p { max-width: 800px; margin: 0 auto; font-size: 1.1rem; }
+
+        /* Footer */
+        footer { background: var(--oscuro); color: #a0a0a0; padding: 40px 20px; text-align: center; font-size: 0.9rem; border-top: 5px solid var(--azul); }
+        footer a { color: white; text-decoration: none; margin: 0 10px; }
+        footer .btn-baja { display: inline-block; background: #c0392b; color: white; padding: 8px 15px; border-radius: 4px; margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>RHEMA</h1>
+        <p>Protegé tu casa de caños rotos, apagones y fugas por el costo de un café al día. Empresa familiar cuidando de tu familia.</p>
+    </header>
+
+    <div class="container">
+        <div class="planes-grid">
+            <!-- Plan Inicial -->
+            <div class="card">
+                <div>
+                    <h3>Plan Inicial</h3>
+                    <p style="color: #7f8c8d;">Ideal para Departamentos</p>
+                    <div class="precio">$20.000<span style="font-size: 1rem; font-weight: normal;">/mes</span></div>
+                    <ul>
+                        <li>Urgencias 24/7 en Plomería</li>
+                        <li>Urgencias 24/7 en Electricidad</li>
+                        <li>Hasta 3 eventos cubiertos al año</li>
+                        <li>Mano de obra incluida hasta $50.000</li>
+                        <li>Activación tras 15 días de carencia</li>
+                    </ul>
+                </div>
+                <!-- REEMPLAZA EL https://mpago.la/1uLA3BK -->
+                <a href="#" class="btn">Adherirme Ahora</a>
+            </div>
+
+            <!-- Plan Destacado -->
+            <div class="card destacado">
+                <div class="badge">EL MÁS VENDIDO</div>
+                <div>
+                    <h3>Plan Total</h3>
+                    <p style="color: #7f8c8d;">Para Casas Familiares</p>
+                    <div class="precio">$35.000<span style="font-size: 1rem; font-weight: normal;">/mes</span></div>
+                    <ul>
+                        <li>Urgencias 24/7 ILIMITADAS</li>
+                        <li>Plomería, Electricidad y Gas</li>
+                        <li><b>2 Visitas preventivas al año</b></li>
+                        <li>Revisión de Gasista Matriculado</li>
+                        <li>Limpieza anual de tanque de agua</li>
+                        <li>Repuestos menores sin cargo</li>
+                    </ul>
+                </div>
+                <!-- REEMPLAZA EL https://mpago.la/2SRkHcU -->
+                <a href="#" class="btn">Adherirme Ahora</a>
+            </div>
+
+            <!-- Plan Premium -->
+            <div class="card">
+                <div>
+                    <h3>Plan Premium</h3>
+                    <p style="color: #7f8c8d;">Hogar Blindado (Casas Grandes/PH)</p>
+                    <div class="precio">$49.999<span style="font-size: 1rem; font-weight: normal;">/mes</span></div>
+                    <ul>
+                        <li>Todo lo del Plan Total incluido</li>
+                        <li><b>Visitas preventivas trimestrales</b></li>
+                        <li>Purgado anual de termotanque</li>
+                        <li>Reajuste de tableros eléctricos</li>
+                        <li>Servicio de Handyman (2hs/mes)</li>
+                    </ul>
+                </div>
+                <!-- REEMPLAZA EL https://mpago.la/17UKhzY -->
+                <a href="#" class="btn">Adherirme Ahora</a>
+            </div>
+        </div>
+
+        <div class="nosotros">
+            <h2>Una empresa familiar a tu servicio</h2>
+            <p>No somos una corporación distante. Somos técnicos profesionales comprometidos con la seguridad de tu hogar. Marcos Ezequiel Ocampo lidera la coordinación operativa para asegurar que cada urgencia reciba una solución honesta, rápida y definitiva.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Rhema Asistencia Residencial. Todos los derechos reservados.</p>
+        <p style="margin-top: 10px;">La suscripción cubre mano de obra. Los materiales corren por cuenta del propietario.</p>
+        <p><a href="#">Términos y Condiciones</a> | <a href="#">Política de Privacidad</a></p>
+        <!-- Requisito Legal Argentino: Botón de Baja/Arrepentimiento -->
+        <a href="#" class="btn-baja">Botón de Arrepentimiento / Dar de Baja</a>
+    </footer>
+
+</body>
+</html>
