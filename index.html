@@ -136,3 +136,38 @@
                 </div>
                 <a href="https://mpago.la/2cZckpx" target="_blank" rel="noopener noreferrer" class="btn">Adherirme Ahora</a>
             </div>
+                <footer style="background: var(--oscuro); color: #a0a0a0; padding: 40px 20px; text-align: center; font-size: 0.9rem; border-top: 5px solid var(--azul);">
+        <p>© 2026 Rhema Asistencia Residencial.</p>
+        <p style="margin-top: 10px;">La suscripción cubre mano de obra hasta $50.000 por evento. Los materiales corren por cuenta del propietario.</p>
+        <p style="margin-top: 10px;">
+            <a href="#informacion-cobertura" style="color: white; text-decoration: none; margin: 0 10px;">Información Legal de Cobertura</a>
+        </p>
+        <div class="baja-container" style="margin-top: 25px; padding-top: 15px; border-top: 1px solid #33393d;">
+            <!-- Usamos un enlace directo con JavaScript nativo e inequívoco -->
+            <a href="javascript:void(0);" class="btn-baja" onclick="document.getElementById('modalBaja').style.display='flex';" style="display: inline-block; background: #c0392b; color: white; padding: 12px 24px; border-radius: 6px; font-weight: bold; text-transform: uppercase; text-decoration: none; border: 2px solid #c0392b; font-size: 0.85rem; letter-spacing: 0.5px;">
+                Botón de Arrepentimiento / Dar de Baja
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        // Función limpia para cerrar el cuadro emergente
+        function cerrarModal() { 
+            document.getElementById('modalBaja').style.display = 'none'; 
+        }
+        
+        // Función para enviar los datos ordenados a tu WhatsApp
+        function enviarFormularioBaja(event) {
+            event.preventDefault();
+            const nombre = document.getElementById('baja-nombre').value;
+            const dni = document.getElementById('baja-dni').value;
+            const plan = document.getElementById('baja-plan').value;
+            const texto = `Hola Rhema. Solicito usar el Botón de Arrepentimiento / Baja.\n\nMis datos:\n- Nombre: ${nombre}\n- DNI/CUIL: ${dni}\n- Plan: ${plan}`;
+            
+            window.open(`https://wa.me{encodeURIComponent(texto)}`, '_blank');
+            cerrarModal();
+        }
+    </script>
+</body>
+</html>
+
