@@ -153,54 +153,24 @@
 
     <script>
 
-// Asegura que el script corra recién cuando TODO el HTML terminó de cargarse en el navegador
-document.addEventListener("DOMContentLoaded", () => {
-    
-    const modal = document.getElementById('modalBaja');
-    const btnBaja = document.querySelector('.btn-baja');
-    const btnCerrar = document.querySelector('.modal-close');
-    const formBaja = document.getElementById('formBaja');
+ <!-- JAVASCRIPT SEGURO -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const modal = document.getElementById('modalBaja');
+            const btnBaja = document.querySelector('.btn-baja');
+            const btnCerrar = document.querySelector('.modal-close');
+            const formBaja = document.getElementById('formBaja');
 
-    // 1. Abre el modal al hacer clic en el botón de baja
-    if (btnBaja) {
-        btnBaja.addEventListener('click', (e) => {
-            e.preventDefault(); // Evita cualquier comportamiento raro del botón
-            modal.style.display = 'flex';
-        });
-    }
+            if (btnBaja) {
+                btnBaja.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    modal.style.display = 'flex';
+                });
+            }
 
-    // 2. Cierra el modal al hacer clic en la "X"
-    if (btnCerrar) {
-        btnCerrar.addEventListener('click', () => {
-            modal.style.display = 'none';
-        });
-    }
+            if (btnCerrar) {
+                btnCerrar.addEventListener('click', () => {
+                    modal.style.display = 'none';
+                });
+            }
 
-    // 3. Cierra el modal si el usuario hace clic afuera de la caja blanca
-    window.addEventListener('click', (event) => {
-        if (event.target === modal) {
-            modal.style.display = 'none';
-        }
-    });
-
-    // 4. Procesa el formulario al enviarlo
-    if (formBaja) {
-        formBaja.addEventListener('submit', (event) => {
-            event.preventDefault(); // Frena la recarga automática de la página
-
-            // Captura los datos ingresados
-            const nombre = document.getElementById('nombre').value;
-            const dni = document.getElementById('dni').value;
-            const email = document.getElementById('email').value;
-            const motivo = document.getElementById('motivo').value;
-
-            // Muestra mensaje de éxito en pantalla
-            alert(`Solicitud recibida para ${nombre}. Nos comunicaremos a ${email} para finalizar la baja.`);
-            
-            // Limpia y cierra todo
-            formBaja.reset();
-            modal.style.display = 'none';
-        });
-    }
-});
-            
