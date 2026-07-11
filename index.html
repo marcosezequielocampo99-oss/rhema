@@ -170,4 +170,39 @@
         }
     </script>
 </body>
-</html>
+</html>const modal = document.getElementById('modalBaja');
+
+// Muestra el modal en pantalla
+function abrirModal() {
+    modal.style.display = 'flex';
+}
+
+// Oculta el modal
+function cerrarModal() {
+    modal.style.display = 'none';
+}
+
+// Cierra el modal si el usuario hace clic fuera de la caja blanca
+window.onclick = function(event) {
+    if (event.target == modal) {
+        cerrarModal();
+    }
+}
+
+// Procesa el envío de la solicitud
+function enviarBaja(event) {
+    event.preventDefault(); // Detiene la recarga de la página
+    
+    // Extrae los valores ingresados por el usuario
+    const nombre = document.getElementById('nombre').value;
+    const dni = document.getElementById('dni').value;
+    const email = document.getElementById('email').value;
+    const motivo = document.getElementById('motivo').value;
+
+    // Alerta visual de confirmación para el usuario
+    alert(`Solicitud recibida para ${nombre}. Nos comunicaremos a ${email} para finalizar la baja.`);
+    
+    // Resetea los campos del formulario y cierra la ventana
+    document.getElementById('formBaja').reset();
+    cerrarModal();
+            
