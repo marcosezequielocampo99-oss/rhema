@@ -153,7 +153,31 @@
 
     <script>
 
- <!-- JAVASCRIPT SEGURO -->
+<!-- REEMPLAZÁ DESDE LA LÍNEA DEL DNI CON ESTE BLOQUE COMPLETADO -->
+                <div class="form-group">
+                    <label for="dni">DNI</label>
+                    <input type="text" id="dni" required placeholder="12.345.678">
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" required placeholder="ejemplo@correo.com">
+                </div>
+                <div class="form-group">
+                    <label for="motivo">Motivo de la Baja</label>
+                    <select id="motivo" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="economico">Motivos económicos</option>
+                        <option value="mudanza">Mudanza fuera de la zona</option>
+                        <option value="insatisfecho">Disconformidad con el servicio</option>
+                        <option value="otro">Otro motivo</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-enviar-baja">Confirmar Baja</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT REPARADO Y ACTIVO -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const modal = document.getElementById('modalBaja');
@@ -173,4 +197,27 @@
                     modal.style.display = 'none';
                 });
             }
+
+            window.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+
+            if (formBaja) {
+                formBaja.addEventListener('submit', (event) => {
+                    event.preventDefault();
+                    const nombre = document.getElementById('nombre').value;
+                    const email = document.getElementById('email').value;
+
+                    alert(`Solicitud recibida para ${nombre}. Nos comunicaremos a ${email} para finalizar la baja.`);
+                    
+                    formBaja.reset();
+                    modal.style.display = 'none';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
 
