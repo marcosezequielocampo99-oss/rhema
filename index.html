@@ -152,25 +152,6 @@
     </footer>
 
     <script>
-        // Función limpia para cerrar el cuadro emergente
-        function cerrarModal() { 
-            document.getElementById('modalBaja').style.display = 'none'; 
-        }
-        
-        // Función para enviar los datos ordenados a tu WhatsApp
-        function enviarFormularioBaja(event) {
-            event.preventDefault();
-            const nombre = document.getElementById('baja-nombre').value;
-            const dni = document.getElementById('baja-dni').value;
-            const plan = document.getElementById('baja-plan').value;
-            const texto = `Hola Rhema. Solicito usar el Botón de Arrepentimiento / Baja.\n\nMis datos:\n- Nombre: ${nombre}\n- DNI/CUIL: ${dni}\n- Plan: ${plan}`;
-            
-            window.open(`https://wa.me{encodeURIComponent(texto)}`, '_blank');
-            cerrarModal();
-        }
-    </script>
-</body>
-</html>const modal = document.getElementById('modalBaja');
 
 // Asegura que el script corra recién cuando TODO el HTML terminó de cargarse en el navegador
 document.addEventListener("DOMContentLoaded", () => {
